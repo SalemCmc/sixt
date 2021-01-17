@@ -23671,7 +23671,7 @@ let mockData=
 
 export const getOffers = () => dispatch => {
 
-     fetch('http://1cdn.sixt.io/codingtask/offers.json')
+     fetch('http://cdn.sixt.io/codingtask/offers.json')
          .then(response => response.json())
        .then(data =>
         {
