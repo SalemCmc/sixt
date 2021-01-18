@@ -10,7 +10,7 @@ export const getOffers = () => dispatch => {
     fetch('https://cdn.sixt.io/codingtask/offers.json')
         .then(response => response.json())
         .then(data =>
-        {
+        { 
 			dispatch(generateBodyStyle(data.offers));
             dispatch({
 			type: GET_INIT_OFFERS,
@@ -30,7 +30,7 @@ export const getOffers = () => dispatch => {
 export const filterOffers = (params) => (dispatch,getState) => {
 
 	let filteredOffers=getState().offers.initOfferList.slice(0);
-
+	
 	const result = filteredOffers.filter(item =>
 		(
 			((params["onlyAutomatic"]&& item.carGroupInfo.automatic===true)) || !params["onlyAutomatic"])

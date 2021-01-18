@@ -24,7 +24,7 @@ const OffersList = (props) => {
 
   return (
     <Container >
-      {props.offersList == null ? <Spinner animation="border" variant="light" /> : null}
+      {props.offersList == null ? <center style={{marginTop:"30px"}}><Spinner animation="border" variant="light" /></center> : null}
       <br />
       {props.offersList && props.offersList.length === 0 ? <center><h3>Sorry, no results! </h3></center> : null}
       <Row>
