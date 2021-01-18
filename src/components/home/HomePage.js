@@ -5,6 +5,7 @@ import ModalWindow  from '../common/ModalWindow';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// This is main component
 const HomePage = () => {
 
   return(
@@ -13,8 +14,6 @@ const HomePage = () => {
             <ToastContainer/>
             <ModalWindow/>            
             <SearchPage/>
-
-
             <OffersList/>
         </React.Fragment>
     );

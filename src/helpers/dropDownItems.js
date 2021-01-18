@@ -1,5 +1,3 @@
-
-
 // generate list of hours for pick-up and return time
 export const getHours = () => 
 {
@@ -12,29 +10,27 @@ export const getHours = () =>
     }
     return hours;
 }
-export const getPrices = () => 
+
+// generate list of prices 
+export const getPrices = ( maxAmount=400) => 
 {
     let prices=["all"];
     var i;
-    for (i = 50; i <= 350; i=i+10)
+    for (i = 50; i <= maxAmount; i=i+10)
     {
-       
         if(i>100 && i<200 && i%20===0)
         {
            prices.push(i);    
         }
-        if(i>200 && i<300 && i%40===0 || i===200 )
+        if((i>200 && i<300 && i%40===0) || i===200 )
         {
            prices.push(i);    
         }
-
-
-        if(i<=100 || i===300 || i===350)
+        if(i<=100 || i===300 || i===350 || i===400 )
         {
            prices.push(i);    
         }
     }
 
-    //console.log("prices: ",prices);
     return prices;
 }

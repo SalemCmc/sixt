@@ -7,18 +7,16 @@ import { filterOffers } from '../../redux/actions/offersActions';
  const SearchPage=(props) => {
 
     
-    const [searchParams, setsearchParams] = useState({"carTypes":[]});
-   let prices=getPrices();
+  const [searchParams, setsearchParams] = useState({"carTypes":[]});
+  let prices=getPrices();
 
-    useEffect(() => {
+  useEffect(() => {
         props.filterOffers(searchParams);
-      }, [searchParams]);
+  }, [searchParams]);
 
 
- const searchOffers =(type,value)=>
- {
-    //console.log("TYPE: ",type);    console.log("VALUE: ",value);
-
+  const searchOffers =(type,value)=>
+  {
     let newSearchParams = { ...searchParams };
 
     if(searchParams[type] && (value==="all" || value===false))
@@ -29,33 +27,32 @@ import { filterOffers } from '../../redux/actions/offersActions';
     }
     else
     {
-        if(type==="carTypes")
-        {
-            const index = newSearchParams[type].indexOf(value);
-            if (index > -1) {
-                newSearchParams[type].splice(index, 1);
-            }
-            else
-            {
-                newSearchParams[type].push(value);
-            } 
+      if(type==="carTypes")
+      {
+        const index = newSearchParams[type].indexOf(value);
+        if (index > -1) {
+            newSearchParams[type].splice(index, 1);
         }
         else
         {
-            newSearchParams[type]=value;
-        }    
-        setsearchParams(newSearchParams);
+            newSearchParams[type].push(value);
+        } 
+      }
+      else
+      {
+          newSearchParams[type]=value;
+      }    
+      setsearchParams(newSearchParams);
     }
- }
- const refreshFilter =()=>
- {
+  }
+  const refreshFilter =()=>
+  {
     setsearchParams({"carTypes":[]});
-
- }
+  }
 
  
   return (  
- <div  style={{padding:"10px",backgroundColor: "black"}}>
+  <div  style={{padding:"10px",backgroundColor: "black"}}>
    <Container >
    <Row xs={2} md={2} lg={5}>
 
@@ -93,7 +90,7 @@ import { filterOffers } from '../../redux/actions/offersActions';
     </Col>
     <Col>
    <Form.Group>
-      <DropdownButton  block="true" variant="outline-warning" title="Car Type" size="sm" >
+      <DropdownButton  block="true" variant="outline-light" title="Car Type" size="sm" >
           <div style={{padding:"15px",width: "250px"}}>
           {Object.keys(props.bodyStyles).map((item )=>
           <Form.Check key={item} onChange={(e)=>searchOffers("carTypes",item)}
@@ -104,13 +101,10 @@ import { filterOffers } from '../../redux/actions/offersActions';
       </DropdownButton>
     </Form.Group>
    </Col>
-    <Col xs={12} md={12}><Button variant="outline-warning" size="sm" block="true"  onClick={refreshFilter}>Clear filter</Button></Col>
-  </Row>
-
-
-</Container>
-</div>
- 
+    <Col xs={12} md={12}><Button variant="outline-light" size="sm" block="true"  onClick={refreshFilter}>Clear filter</Button></Col>
+   </Row>
+   </Container>
+  </div>
  );
 }
 
