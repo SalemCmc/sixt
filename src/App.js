@@ -7,7 +7,7 @@ import store from './store';
 function App() {
   return (
     <Provider store={store}>
-    <div className="App" style={{backgroundColor: 'gray', minHeight: "100%"}}>
+    <div className="App" className="homecontainer">
         <HomePage/>
     </div>
     </Provider>

@@ -52,7 +52,7 @@ import { filterOffers } from '../../redux/actions/offersActions';
 
  
   return (  
-  <div  style={{padding:"10px",backgroundColor: "black"}}>
+  <div className="search-panel">
    <Container >
    <Row xs={2} md={2} lg={5}>
 
@@ -91,7 +91,7 @@ import { filterOffers } from '../../redux/actions/offersActions';
     <Col>
    <Form.Group>
       <DropdownButton  block="true" variant="outline-light" title="Car Type" size="sm" >
-          <div style={{padding:"15px",width: "250px"}}>
+          <div className="body-types-drop">
           {Object.keys(props.bodyStyles).map((item )=>
           <Form.Check key={item} onChange={(e)=>searchOffers("carTypes",item)}
            style={{marginBottom:"15px"}} custom type="checkbox" id={item} label={item} 

@@ -12,3 +12,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.homecontainer{
+  background-color: gray;
+  min-height: 100%;
+
+}
+.offer-details-header{
+  text-align: center;
+  margin-top: 10px;
+  border-bottom: 1px solid gray;
+}
+.card-offer{
+  margin-bottom: 10px;
+  border: 0px;
+}
+.search-panel{
+  padding: 10px;
+  background-color: black;
+}
+.body-types-drop
+{
+  padding:15px;
+  width: 250px;
+}

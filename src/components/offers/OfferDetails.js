@@ -46,7 +46,7 @@ const OfferDetails = (props) => {
           <Accordion.Toggle as={Button} variant="secondary" size="sm" block eventKey="0">SHOW DETAILS </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
             <React.Fragment>
-              <div style={{ textAlign: "center", marginTop: "10px", borderBottom: "1px solid gray" }}>
+              <div className="offer-details-header">
                 <h3 >{props.offerDetails.headlines.description}</h3>
                 <p >{props.offerDetails.headlines.longSubline}</p>
               </div>

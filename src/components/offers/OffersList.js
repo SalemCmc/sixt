@@ -31,7 +31,7 @@ const OffersList = (props) => {
         {(props.offersList && props.offersList.length > 0) && props.offersList.map((item, index) =>
 
           <Col xs={12} md={6} lg={4} key={item.id}>
-            <Card bg="dark" style={{ marginBottom: '10px', border: "0px" }}>
+            <Card bg="dark" className="card-offer">
               <Card.Img onClick={() => showofferDetails(item.id)} style={{ cursor: "pointer" }}
                 variant="top" src={(item.carGroupInfo && item.carGroupInfo.modelExample && item.carGroupInfo.modelExample.imageUrl) || noPhotoCar} />
               <Card.Body style={{ color: 'orange' }}>
